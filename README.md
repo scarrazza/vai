@@ -1,6 +1,7 @@
-# vai
+# VAI
+A simple tool to simplify shell operations when programming.
 
-# Installation
+## Installation
 
 Download the code and install using the setup script:
 
@@ -8,7 +9,7 @@ Download the code and install using the setup script:
 $ python setup.py install
 ```
 
-# Usage
+## Usage
 
 Create a file and place the instructions in comments starting with the "vai:" tag, e.g. for latex compilation:
 
@@ -17,6 +18,8 @@ Create a file and place the instructions in comments starting with the "vai:" ta
 % vai: bibtex mydocument
 % vai: pdflatex mydocument.tex
 % vai: pdflatex mydocument.tex
+\documentclass{article}
+...
 ```
 
 Then run vai:
@@ -25,4 +28,4 @@ Then run vai:
 $ vai
 ```
 
-Check the examples folder in this git repository.
+Check the examples folder in this git repository for more examples.
