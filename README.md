@@ -11,7 +11,7 @@ $ python setup.py install
 
 ## Usage
 
-Create a file and place the instructions in comments starting with the "vai:" tag, e.g. for latex compilation:
+Create a file and place the instructions in comments starting with the ``vai:`` tag, e.g. for latex compilation:
 
 ```Latex
 % vai: pdflatex mydocument.tex
@@ -22,7 +22,7 @@ Create a file and place the instructions in comments starting with the "vai:" ta
 ...
 ```
 
-Then run vai:
+Then run ``vai``:
 
 ```Shell
 $ vai
