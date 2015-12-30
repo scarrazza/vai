@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+""" VAI tool """
+
+__author__ = 'Stefano Carrazza'
+__license__ = 'GPL'
+__version__ = '0.0.1'
+__email__ = 'stefano.carrazza@cern.ch'
+
+import os
+from os import listdir
+from os.path import isfile, join
+from subprocess import call
+
+__filter__ = ['vai','~','#','.gitignore']
+
+def filter(files):
+    index = []
+    for f in range(len(files)):
+        for el in __filter__:
+            if el in files[f]: 
+                index.append(files[f]) 
+    for el in index:
+        files.remove(el)
+    return files
+
+def main():
+    
+    ## get current directory path
+    mypath = os.getcwd()
+    print(" [vai]: get path: %s" % mypath)
+
+    ## 1st step: search for files in current folder
+    files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+    print(" [vai]: list files: %s" % files)
+
+    ## 2nd step: filter files by extension
+    files = filter(files)
+    print(" [vai]: filtered files: %s" % files)
+    
+    ## 3nd step: read files and search for vai comments
+    for file in files:
+        f = open(file,'rb')        
+        content = f.readlines()        
+        for l in content:
+            if 'vai:' in l:
+                print(" [vai]: command found in %s" % file)
+                print(" [vai]: executing %s" % l[:-1])
+                v = l.split()
+                v = v[v.index("vai:")+1:]
+                call(v)
+    print(" [vai]: done ")
+
+def splash():
+    print(" __   ____ _(_) ")
+    print(" \ \ / / _` | | ")
+    print("  \ V / (_| | | ")
+    print("   \_/ \__,_|_| ")    
+    print("\n __v%s__ Author: Stefano Carrazza\n" % __version__)
+
+
+if __name__ == "__main__":
+    splash()
+    main()
