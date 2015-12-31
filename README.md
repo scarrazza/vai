@@ -1,3 +1,5 @@
+![alt text](https://github.com/scarrazza/vai/raw/master/extra/logo.svg "Logo VAI")
+
 # VAI
 A simple tool to simplify shell operations when programming.
 
