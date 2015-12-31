@@ -1,4 +1,4 @@
-![Logo](https://github.com/scarrazza/vai/raw/master/extra/logo.png "Logo VAI")
+![Logo](https://github.com/scarrazza/vai/raw/master/extra/logovai.png "Logo VAI")
 
 A simple tool to simplify shell operations when programming.
 
